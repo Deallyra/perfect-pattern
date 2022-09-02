@@ -1,0 +1,8 @@
+<h3>Liste des catégories</h3>
+<ul>
+    <li *ngFor="let category of categories">{{category.cat_name}}
+        <!-- <ul *ngIf="category.cat_parent_id != 0">
+            <li>{{category.cat_parent_id}}</li>
+        </ul> -->
+    </li>
+</ul>

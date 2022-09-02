@@ -1,1 +1,773 @@
-/* You can add global styles to this file, and also import other style files */
+@import "src/variables.scss";
+
+// Reset TBD
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  line-height: 1.15;
+  font-size: 62.5%;
+  font-family: $mainFont;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 94px 0;
+
+  @media screen and (min-width: 992px) {
+    padding: 0;
+  }
+
+  & > * {
+    line-height: 2.2rem;
+    font-size: 1.6rem;
+    color: $fontColor;
+  }
+}
+
+.container {
+  width: calc(100% - 30px);
+  margin: auto;
+
+  @media screen and (min-width: 992px) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+
+h1 {
+  margin: 0;
+  line-height: 2.8rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+
+  @media screen and (min-width: 992px) {
+    line-height: 4rem;
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+
+  small {
+    line-height: 2.4rem;
+    font-size: 2rem;
+    font-weight: 300;
+
+    @media screen and (min-width: 992px) {
+      line-height: 4rem;
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+  }
+}
+
+h2 {
+  margin: 30px 0;
+  line-height: 2.4rem;
+  font-size: 2rem;
+  font-weight: 600;
+
+  @media screen and (min-width: 992px) {
+    margin: 60px 0;
+    line-height: 4rem;
+    font-size: 4rem;
+    font-weight: 600;
+  }
+}
+
+h3 {
+  margin: 0;
+  padding-bottom: 24px;
+  line-height: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+
+  @media screen and (min-width: 992px) {
+    line-height: 4.4rem;
+    font-size: 3.6rem;
+  }
+}
+
+.breadcrumb {
+  display: none;
+
+  @media screen and (min-width: 992px) {
+    display: flex;
+  }
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 0px;
+  gap: 30px;
+  list-style: none;
+
+  li + li {
+    a::before {
+      content: ">";
+      position: relative;
+      left: -15px;
+    }
+  }
+
+  li:last-child {
+    &::before {
+      content: ">";
+      position: relative;
+      left: -15px;
+      color: $fontLightColor;
+    }
+    color: $mainColor;
+  }
+
+  a {
+    line-height: 150%;
+    font-size: 1.6rem;
+    color: $fontLightColor;
+    text-decoration: none;
+  }
+}
+
+/* Forms */
+input:not([type="checkbox"]),
+select {
+  width: 100%;
+  min-width: 150px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid rgba($mainColor, 0.75);
+  line-height: 2rem;
+  font-size: 1.4rem;
+  color: $mainColor;
+
+  &:focus {
+    border: 1px solid rgba($mainColor, 0.75);
+    outline: solid rgba($mainColor, 0.75);
+  }
+
+  &.filter,
+  &.search {
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+
+  &.filter {
+    padding: 10px 40px 10px 15px;
+    background-color: $mainColor;
+    background-image: url(/assets/icons/filter.svg);
+    background-position: calc(100% - 10px) center;
+    color: #FFFFFF;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &.search {
+    padding: 10px 15px 10px 45px;
+    background-position: 10px center;
+    background-image: url(/assets/icons/search.svg);
+  }
+
+  &.search_tag {
+    margin-bottom: 25px;
+    padding: 10px 15px 10px 45px;
+    background-image: url(/assets/icons/tag.svg);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+
+    & + .tags {
+      margin-bottom: 30px;
+
+      .tag {
+        a {
+          display: block;
+
+          &::before {
+            content: " ";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            vertical-align: bottom;
+            background-image: url(/assets/icons/close.svg);
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  height: 40px;
+  padding: 8px 15px;
+  border: none;
+  line-height: 22px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+
+  @media screen and (min-width: 992px) {
+    height: 54px !important;
+    padding: 15px 30px;
+    font-weight: 600;
+  }
+
+  &.main_button {
+    background-color: $mainColor;
+    color: #FFF;
+    transition: background-color ease 0.5s;
+
+    &:hover,
+    &:active,
+    &.active {
+      background-color: darken($mainColor, 10%);
+    }
+  }
+}
+
+.inputs-group {
+  margin-top: 12px;
+
+  .inputs-group {
+    margin-left: 20px;
+
+    .inputs-group {
+      margin-left: 20px;
+    }
+  }
+
+  .input-group {
+    margin-top: 12px;
+  }
+}
+
+.input-group {
+  &.checkbox {
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked {
+        & + label {
+          &::before {
+            background-color: rgba($mainColor, 0.75);
+            background-image: url(/assets/icons/check.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+    label {
+      cursor: pointer;
+
+      &::before {
+        content: " ";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #D1D1D6;
+        vertical-align: bottom;
+        // margin: 2px 10px 0 0;
+        // vertical-align: top;
+      }
+    }
+  }
+}
+
+input {
+  padding: 15px;
+}
+
+select {
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Tags - Etiquettes */
+.tags {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  // gap: 15px 5px;
+  gap: 5px;
+  flex-wrap: wrap;
+  list-style: none;
+  white-space: nowrap;
+
+  @media screen and (min-width: 992px) {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .tag {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 100px;
+    transition: background-color ease 0.5s;
+
+    &:nth-of-type(even) {
+      background-color: $secondaryColor;
+
+      &:hover {
+        background-color: darken($secondaryColor, 10%);
+      }
+    }
+
+    &:nth-of-type(odd) {
+      background-color: $mainColor;
+
+      &:hover {
+        background-color: darken($mainColor, 10%);
+      }
+    }
+
+    a {
+      display: block;
+      line-height: 16px;
+      font-size: 12px;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+  }
+}
+
+/* patterns cards */
+/* Desktop big card */
+.pattern_link {
+  width: 100%;
+  text-decoration: none;
+  color: $fontColor;
+
+  @media screen and (min-width: 992px) {
+    width: 33%;
+  }
+}
+
+[class$="_source"] {
+  &::before {
+    background-image: url(/assets/icons/link.svg);
+  }
+
+  &:hover {
+    text-decoration: none;
+    transition: text-decoration ease 0.5s;
+  }
+}
+
+.pattern_card,
+.fabric_card {
+  position: relative;
+
+  figure {
+    position: relative;
+    display: block;
+
+    .minis {
+      display: none;
+
+      @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 15px;
+      }
+    }
+
+    .arrow_left,
+    .arrow_right {
+       position: absolute;
+       top: calc(50% - 17.5px);
+       display: block;
+       width: 36px;
+       height: 36px;
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
+
+    .arrow_left {
+      left: 15px;
+    }
+
+    .arrow_right {
+      right: 15px;
+    }
+  }
+
+  .infos_pattern,
+  .infos_fabric {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(235, 212, 203, 0.25);
+
+    @media screen and (min-width: 992px) {
+      // width: 50%;
+      // flex-direction: column;
+      align-self: stretch;
+      padding: 15px 15px 45px 15px;
+    }
+
+    .pattern_title,
+    .fabric_title {
+      line-height: 2.4rem;
+      font-size: 2rem;
+      font-weight: 600;
+
+      @media screen and (min-width: 992px) {
+        line-height: 3.2rem;
+        font-size: 2.4rem;
+      }
+    }
+
+    .fabric_brand {
+      line-height: 2.4rem;
+      font-size: 1.8rem;
+    }
+
+    .fabric_type {
+      line-height: 2rem;
+      font-size: 1.4rem;
+    }
+
+    .pattern_creator,
+    .fabric_creator {
+      line-height: 2.4rem;
+      font-size: 1.8rem;
+    }
+
+    .pattern_breadcrumb,
+    .fabric_type {
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding: 0;
+
+      @media screen and (min-width: 992px) {
+        margin-bottom: 15px;
+      }
+
+      li {
+        display: inline;
+        list-style: none;
+
+        a {
+            line-height: 2rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: $fontLightColor;
+        }
+
+        &:last-of-type {
+          a {
+            color: $mainColor;
+          }
+        }
+
+        & + li {
+          &::before {
+            content: ">";
+            display: inline-block;
+            width: 5px;
+            margin: 0 5px;
+            line-height: 2rem;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .pattern_links,
+  .fabric_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 992px) {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+    }
+
+    a, span {
+      display: inline-block;
+      line-height: 2rem;
+      font-size: 1.2rem;
+      color: $fontColor;
+
+      @media screen and (min-width: 992px) {
+        font-size: 1.4rem;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+      }
+    }
+
+    .pattern_comments,
+    .fabric_comments {
+      // position: absolute;
+      // right: 16px;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        background-image: url(/assets/icons/comments.svg);
+        background-repeat: no-repeat;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &.one_image {
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+      width: 33%;
+    }
+
+    figure {
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .arrow_left,
+      .arrow_right {
+        position: absolute;
+        top: calc(50% - 17.5px);
+        display: block;
+        width: 36px;
+        height: 36px;
+
+        // @media screen and (min-width: 992px) {
+        //   display: none;
+        // }
+      }
+    }
+
+    .infos_pattern {
+      padding: 15px;
+
+      .pattern_description {
+        // margin-bottom: 15px;
+        line-height: 2rem;
+        font-size: 1.4rem;
+      }
+
+      .title {
+        // margin-bottom: 8px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(44, 44, 46, 0.2); // séparateur
+        line-height: 24px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+    &.xs {
+      .pattern_infos_wrapper {
+        .pattern_title {
+          margin-bottom: 0 !important;
+          line-height: 2.2rem;
+          font-size: 1.6rem;
+        }
+        .favorite_comments {
+          .pattern_favorite::before,
+          .pattern_comments::before {
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+
+  &.three_images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+
+    figure {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 15px;
+
+      @media screen and (min-width: 992px) {
+        width: auto;
+      }
+
+      & > img {
+        width: 66%;
+        align-self: stretch;
+
+        @media screen and (min-width: 992px) {
+          width: 248px;
+        }
+      }
+
+      .minis {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 15px;
+
+        img {
+          width: 99px;
+          height: 104px;
+
+          @media screen and (min-width: 992px) {
+            width: 117px;
+            height: 104px;
+          }
+        }
+      }
+    }
+  }
+
+  &.four_images {
+
+      figure {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0px;
+        gap: 30px;
+        // width: 100%;
+        // height: 220px;
+        overflow: hidden;
+        position: relative;
+
+        @media screen and (min-width: 992px) {
+          flex-direction: row;
+          width: auto;
+          height: auto;
+        }
+
+        & > img {
+          width: 100%;
+
+          @media screen and (min-width: 992px) {
+            width: 248px;
+            height: 349px;
+          }
+
+        }
+
+        .minis {
+          width: 107px;
+          img {
+            width: 107px;
+            height: 107px;
+          }
+        }
+      }
+    }
+}
+
+.fabric_card {
+  &.one_image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0px;
+    gap: 15px;
+
+    figure {
+      width: 100%;
+
+      @media screen and (min-width: 992px) {
+        width: auto;
+      }
+
+      img {
+        width: 100%;
+        max-height: 223px;
+        object-fit: cover;
+        object-position: center;
+
+        @media screen and (min-width: 992px) {
+          width: 380px !important;
+          height: 223px !important;
+        }
+      }
+    }
+  }
+}
+
+.pattern_favorite,
+.fabric_favorite {
+  margin-right: 15px;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    background-image: url(/assets/icons/favorite.svg);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+
+  &.full,
+  &:hover {
+    &::before {
+    background-image: url(/assets/icons/favorite_full.svg);
+    }
+  }
+}

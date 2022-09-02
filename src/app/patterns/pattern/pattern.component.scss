@@ -1,0 +1,310 @@
+@import "src/variables.scss";
+
+h1 {
+  margin-bottom: 0;
+  line-height: 2.8rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: $fontColor;
+
+  @media screen and (min-width: 992px) {
+    margin-bottom: 15px;
+    line-height: 4rem;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  small {
+    display: block;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 300;
+    color: $secondaryFontColor;
+
+    @media screen and (min-width: 992px) {
+      margin-top: 15px;
+      font-size: 3.2rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.pattern_card {
+  &.four_images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 0px;
+    gap: 30px;
+
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+    }
+
+    & > h1 {
+      display: block;
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
+
+    .infos_pattern {
+      h1 {
+        display: none;
+
+        @media screen and (min-width: 992px) {
+          display: block;
+        }
+      }
+
+      figure {
+        width: 100%;
+
+        @media screen and (min-width: 992px) {
+          width: 50%;
+        }
+      }
+
+      .pattern_difficulty,
+      .pattern_description {
+        line-height: 2rem;
+        font-size: 1.6rem;
+      }
+
+      .pattern_difficulty {
+        margin-bottom: 20px;
+      }
+
+      .pattern_description {
+        font-weight: 300;
+      }
+    }
+  }
+
+  &.one_image {
+    // width: 33.33%;
+  }
+}
+
+.pattern_more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 30px;
+
+  @media screen and (min-width: 992px) {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .nb_images {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    @media screen and (min-width: 992px) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  .tagsList {
+    // display: block;
+    // width: 100%;
+    // text-align: left;
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    overflow-x: scroll;
+    gap: 15px;
+    padding: 10px 0;
+
+    @media screen and (min-width: 992px) {
+      display: inline-block;
+      width: auto;
+      text-align: left;
+      overflow-x: auto;
+    }
+
+    &::before {
+      @media screen and (min-width: 992px) {
+        content: "|";
+        margin: 0 15px;
+      }
+    }
+
+    span {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .tags {
+      margin-left: 0;
+      @media screen and (min-width: 992px) {
+        display: inline-flex;
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+.fabric_pattern_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+  padding: 0px;
+  gap: 30px;
+
+  @media screen and (min-width: 992px) {
+    margin-top: 60px;
+    flex-direction: row;
+  }
+
+  .creator_infos {
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+      width: 380px;
+    }
+
+    .creator_name {
+      margin-bottom: 60px;
+      line-height: 2.8rem;
+      font-size: 2.4rem;
+      font-weight: 600;
+
+      @media screen and (min-width: 992px) {
+        line-height: 4rem;
+        font-size: 4rem;
+        font-weight: 600;
+      }
+
+      .fabric_favorite {
+        margin-right: 0;
+
+        &::before {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .creator_logo {
+      margin-bottom: 30px;
+
+      @media screen and (min-width: 992px) {
+        margin-bottom: 15px;
+      }
+
+      img {
+        display: block;
+        width: 275px;
+        margin: auto;
+      }
+    }
+  }
+
+  .brand_most_seen {
+    .title {
+      margin: 15px 0 0 0;
+      line-height: 4rem;
+      font-size: 2rem;
+      font-weight: 700;
+
+      @media screen and (min-width: 992px) {
+        margin: 15px 0;
+      }
+    }
+
+    article {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 15px;
+
+      .pattern_title {
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      figure {
+        img {
+          width: 117px;
+          object-fit: cover;
+          object-position: center center;
+        }
+      }
+
+      .pattern_infos_wrapper {
+        display: flex;
+        align-self: stretch;
+        width: calc(100% - 117px);
+        padding: 0px;
+        gap: 15px;
+      }
+    }
+  }
+
+  .suggestions {
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+      width: calc(100% - 380px);
+    }
+
+    h3 {
+      margin-bottom: 30px;
+      padding-bottom: 0;
+      line-height: 2.8rem;
+      font-size: 2.4rem;
+      font-weight: 600;
+
+      @media screen and (min-width: 992px) {
+        margin-bottom: 60px;
+        line-height: 4rem;
+        font-size: 4rem;
+      }
+    }
+
+    .patterns_suggestions,
+    .fabrics_suggestions {
+
+      .patterns_wrapper,
+      .fabrics_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 30px;
+
+        @media screen and (min-width: 992px) {
+          flex-direction: row;
+        }
+
+      }
+    }
+
+    .fabrics_suggestions {
+      h3 {
+        margin: 30px 0;
+      }
+    }
+
+    article {
+      width: 100%;
+
+      @media screen and (min-width: 992px) {
+        width: 380px;
+      }
+
+      figure {
+
+      }
+    }
+  }
+}

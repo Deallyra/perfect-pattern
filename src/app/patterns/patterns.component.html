@@ -1,0 +1,232 @@
+<div class="patterns_search_component">
+  <div class="container">
+    <!-- <h3>Liste des patrons</h3>
+    <ul>
+        <li *ngFor="let pattern of patterns">
+            <a [routerLink]="['/pattern', pattern.pat_id]">{{pattern.pat_name}}</a>
+        </li>
+    </ul> -->
+
+    <h1>Recherche de patrons de couture</h1>
+    <h2>Trouvez le patron de couture qui vous convient et laissez-nous vous guider pour trouver le tissu parfaitement associé.</h2>
+
+<hr>
+<!-- {{this.tag}} -->
+<hr>
+
+    <div class="search_engine">
+      <div class="search_filters">
+        <form action="">
+          <div class="search_term">
+            <input type="text" class="search" id="search_term" name="search_term" placeholder="Rechercher par terme"> <!-- Rechercher<span> patron</span>-->
+            <input type="button" value="Filtrer" class="button main_button filter">
+          </div>
+
+          <div class="checkboxes_and_tags">
+
+            <div class="checkboxes">
+              <h3>Catégories</h3>
+
+              <div class="input-group checkbox">
+                <input type="checkbox" name="search_input_femmes" id="search_input_femmes">
+                <label for="search_input_femmes">Femmes</label>
+              </div>
+
+              <div class="inputs-group">
+
+                <div class="inputs-group">
+                  <div class="input-group checkbox">
+                    <input type="checkbox" name="search_input_hauts" id="search_input_hauts">
+                    <label for="search_input_hauts">Hauts</label>
+                  </div>
+
+                  <div class="inputs-group">
+                    <div class="input-group checkbox">
+                      <input type="checkbox" name="search_input_chemisiers_tuniques" id="search_input_chemisiers_tuniques">
+                      <label for="search_input_chemisiers_tuniques">Chemisiers & Tuniques</label>
+                    </div>
+                    <div class="input-group checkbox">
+                      <input type="checkbox" name="search_input_tops_tshirts" id="search_input_tops_tshirts">
+                      <label for="search_input_tops_tshirts">Tops & T-shirts</label>
+                    </div>
+                    <div class="input-group checkbox">
+                      <input type="checkbox" name="search_input_pulls_gilets" id="search_input_pulls_gilets">
+                      <label for="search_input_pulls_gilets">Pulls & Gilets</label>
+                    </div>
+                    <div class="input-group checkbox">
+                      <input type="checkbox" name="search_input_vestes_manteaux" id="search_input_vestes_manteaux">
+                      <label for="search_input_vestes_manteaux">Vestes & Manteaux</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inputs-group">
+                  <div class="input-group checkbox">
+                    <input type="checkbox" name="search_input_bas" id="search_input_bas">
+                    <label for="search_input_bas">Bas</label>
+                  </div>
+                </div>
+
+                <div class="inputs-group">
+                  <div class="input-group checkbox">
+                    <input type="checkbox" name="search_input_robes" id="search_input_robes">
+                    <label for="search_input_robes">Robes</label>
+                  </div>
+                </div>
+
+                <div class="inputs-group">
+                  <div class="input-group checkbox">
+                    <input type="checkbox" name="search_input_lingerie" id="search_input_lingerie">
+                    <label for="search_input_lingerie">Lingerie</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inputs-group">
+                <div class="input-group checkbox">
+                  <input type="checkbox" name="search_input_enfants" id="search_input_enfants">
+                  <label for="search_input_enfants">Enfants</label>
+                </div>
+              </div>
+              <div class="inputs-group">
+                <div class="input-group checkbox">
+                  <input type="checkbox" name="search_input_hommes" id="search_input_hommes">
+                  <label for="search_input_hommes">Hommes</label>
+                </div>
+              </div>
+              <div class="inputs-group">
+                <div class="input-group checkbox">
+                  <input type="checkbox" name="search_input_accessoires" id="search_input_accessoires">
+                  <label for="search_input_accessoires">Accessoires</label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="tags_search">
+              <h3>Etiquettes</h3>
+
+              <input type="text" name="search_tag" class="search_tag" placeholder="Rechercher par étiquette">
+              <ul class="tags">
+                <li class="tag"><a href="#">Chic</a></li>
+                <li class="tag"><a href="#">Dos nu</a></li>
+                <li class="tag"><a href="#">Steampunk</a></li>
+                <li class="tag"><a href="#">Chic</a></li>
+                <li class="tag"><a href="#">Dos nu</a></li>
+                <li class="tag"><a href="#">Steampunk</a></li>
+              </ul>
+              <input type="button" class="button main_button" value="Filtrer les résultats">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="search_results">
+
+          <article class="pattern_card one_image" id="{{pattern.pat_id}}" *ngFor="let pattern of patterns">
+            <a href="pattern/{{pattern.pat_id}}" class="pattern_link">
+              <figure>
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/medium/back-is-back-du-34-au-46-verso.jpg" alt="">
+                <a href="#" class="arrow_left"><img src="/assets/icons/arrow_left.svg" alt="Image précédente"></a>
+                <a href="#" class="arrow_right"><img src="/assets/icons/arrow_right.svg" alt="Image suivante"></a>
+              </figure>
+              <div class="infos_pattern">
+                <div class="pattern_title">{{pattern.pat_name}}</div>
+                <a href="#" class="pattern_creator">{{pattern.pat_creator}}</a>
+                <div class="pattern_description">
+                  {{pattern.pat_description}}
+                </div>
+                <div class="title">Etiquettes</div>
+                <ul class="tags" *ngFor="let tag of pattern.pat_tags">
+                  <li class="tag"><a href="/patterns/tag/{{tag}}">Chic</a></li>
+                  <!-- <li class="tag"><a href="#">Chic</a></li>
+                  <li class="tag"><a href="#">Dos nu</a></li>
+                  <li class="tag"><a href="#">Steampunk</a></li>
+                  <li class="tag"><a href="#">Historique</a></li> -->
+                </ul>
+              </div>
+            </a>
+          </article>
+        <!-- </div> -->
+
+
+
+
+        <!-- <div class="pattern_card">
+          <a href="pattern/0" class="pattern_link">
+            <article class="pattern_card one_image" id="0">
+              <figure>
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/medium/back-is-back-du-34-au-46-verso.jpg" alt="">
+                <a href="#" class="arrow_left"><img src="/assets/icons/arrow_left.svg" alt="Image précédente"></a>
+                <a href="#" class="arrow_right"><img src="/assets/icons/arrow_right.svg" alt="Image suivante"></a>
+              </figure>
+              <div class="infos_pattern">
+                <div class="pattern_title">Back is back</div>
+                <a href="#" class="pattern_creator">Vanessa Pouzet</a>
+                <div class="pattern_description">
+                  Deux découpes au choix pour sublimer le dos&nbsp;:&nbsp;soft ou sexy chocolat. La coupe près du corps et l'encolure ras de cou vous assurent une tenue parfaite.
+                </div>
+                <div class="title">Etiquettes</div>
+                <ul class="tags">
+                  <li class="tag"><a href="#">Chic</a></li>
+                  <li class="tag"><a href="#">Dos nu</a></li>
+                  <li class="tag"><a href="#">Steampunk</a></li>
+                  <li class="tag"><a href="#">Historique</a></li>
+                </ul>
+              </div>
+            </article>
+          </a>
+        </div>
+        <div class="pattern_card">
+          <a href="pattern/0" class="pattern_link">
+            <article class="pattern_card one_image" id="0">
+              <figure>
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/medium/back-is-back-du-34-au-46-verso.jpg" alt="">
+                <a href="#" class="arrow_left"><img src="/assets/icons/arrow_left.svg" alt="Image précédente"></a>
+                <a href="#" class="arrow_right"><img src="/assets/icons/arrow_right.svg" alt="Image suivante"></a>
+              </figure>
+              <div class="infos_pattern">
+                <div class="pattern_title">Back is back</div>
+                <a href="#" class="pattern_creator">Vanessa Pouzet</a>
+                <div class="pattern_description">
+                  Deux découpes au choix pour sublimer le dos&nbsp;:&nbsp;soft ou sexy chocolat. La coupe près du corps et l'encolure ras de cou vous assurent une tenue parfaite.
+                </div>
+                <div class="title">Etiquettes</div>
+                <ul class="tags">
+                  <li class="tag"><a href="#">Chic</a></li>
+                  <li class="tag"><a href="#">Dos nu</a></li>
+                  <li class="tag"><a href="#">Steampunk</a></li>
+                  <li class="tag"><a href="#">Historique</a></li>
+                </ul>
+              </div>
+            </article>
+          </a>
+        </div>
+        <div class="pattern_card">
+          <a href="pattern/0" class="pattern_link">
+            <article class="pattern_card one_image" id="0">
+              <figure>
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/medium/back-is-back-du-34-au-46-verso.jpg" alt="">
+                <a href="#" class="arrow_left"><img src="/assets/icons/arrow_left.svg" alt="Image précédente"></a>
+                <a href="#" class="arrow_right"><img src="/assets/icons/arrow_right.svg" alt="Image suivante"></a>
+              </figure>
+              <div class="infos_pattern">
+                <div class="pattern_title">Back is back</div>
+                <a href="#" class="pattern_creator">Vanessa Pouzet</a>
+                <div class="pattern_description">
+                  Deux découpes au choix pour sublimer le dos&nbsp;:&nbsp;soft ou sexy chocolat. La coupe près du corps et l'encolure ras de cou vous assurent une tenue parfaite.
+                </div>
+                <div class="title">Etiquettes</div>
+                <ul class="tags">
+                  <li class="tag"><a href="#">Chic</a></li>
+                  <li class="tag"><a href="#">Dos nu</a></li>
+                  <li class="tag"><a href="#">Steampunk</a></li>
+                  <li class="tag"><a href="#">Historique</a></li>
+                </ul>
+              </div>
+            </article>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

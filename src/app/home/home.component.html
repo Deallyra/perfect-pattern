@@ -1,0 +1,209 @@
+<div class="home_component">
+  <div class="container">
+    <section class="hook">
+      <figure>
+        <img src="/assets/illustrations/sewing_machine_lg.png" alt="" srcset="">
+      </figure>
+      <h1>
+        Trouvez le patron parfait pour votre projet à l'aide de notre moteur de recherche !
+        <small><br/><br/>Ainsi qu'à l'aide des commentaires des autres utilisateurs.</small>
+      </h1>
+    </section>
+
+    <section class="search">
+      <h2>Rechercher des patrons de couture</h2>
+
+      <div class="search_blocks">
+        <div class="search_blocks_wrapper">
+          <div class="search_block by_term">
+            <h3>Par terme</h3>
+            <form>
+              <input type="text" class="search" name="term" id="term" placeholder="Terme à rechercher">
+              <label for="term">(Nom du créateur, type d'ouvrage, terme...)</label>
+            </form>
+          </div>
+          <div class="search_block by_tag">
+            <h3>Par étiquette</h3>
+            <form action="">
+              <input type="text" class="search search_tag" name="search_tag" id="search_tag" placeholder="Etiquette à rechercher">
+            </form>
+            <ul class="tags">
+              <!-- TODO : Tags aléatoires issus de la BDD -->
+              <li><label for="search_tag">Exemples : </label></li>
+              <li class="tag" *ngFor="let randomizedTag of randomizedTags"><a href="/patterns/tag/{{randomizedTag.tag_short_url}}">{{randomizedTag.tag_label}}</a></li>
+            </ul>
+          </div>
+          <div class="search_block by_creator">
+            <h3>Par créateur</h3>
+            <select name="search_creator">
+              <option value="0">Nom du créateur à rechercher</option>
+              <option value="1">Test</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="last_patterns">
+      <h2>Derniers patrons mis en ligne</h2>
+
+      <div class="last_patterns_list">
+        <a href="pattern/0" class="pattern_link">
+          <article class="pattern_card last_pattern four_images" id="0">
+            <figure>
+              <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/medium/back-is-back-du-34-au-46-verso.jpg" alt="">
+              <a href="#" class="arrow_left"><img src="/assets/icons/arrow_left.svg" alt="Image précédente"></a>
+              <a href="#" class="arrow_right"><img src="/assets/icons/arrow_right.svg" alt="Image suivante"></a>
+              <div class="minis">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-recto.jpg" alt="">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-verso.jpg" alt="">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-recto.jpg" alt="">
+              </div>
+            </figure>
+            <div class="infos_pattern">
+              <div class="pattern_title">Back is back</div>
+              <a href="#" class="pattern_creator">Vanessa Pouzet</a>
+              <ul class="pattern_breadcrumb">
+                <li><a href="#" title="Lister les patrons pour femme">Femme</a></li>
+                <li><a href="#" title="Lister les patrons de hauts pour femme">Hauts</a></li>
+                <li><a href="#" title="Lister les patrons de tops pour femme">Tops</a></li>
+              </ul>
+              <div class="pattern_description">
+                Deux découpes au choix pour sublimer le dos&nbsp;:&nbsp;soft ou sexy chocolat. La coupe près du corps et l'encolure ras de cou vous assurent une tenue parfaite.
+              </div>
+              <div class="pattern_links">
+                <a class="pattern_source" href="https://eshop.vanessapouzet.com/fr/les-patrons/166-back-is-back-du-34-au-46-.html" title="Se rendre sur la page originale du patron (lien externe)" target="_blank">Vers la source</a>
+                <div class="favorite_comments">
+                  <a class="pattern_favorite" href="#" title="Mettre ce patron en favori">12</a>
+                  <span class="pattern_comments">0</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="#" class="pattern_link">
+          <article class="pattern_card last_pattern" id="0">
+            <figure>
+              <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/medium/back-is-back-du-34-au-46-verso.jpg" alt="">
+              <a href="#" class="arrow_left"><img src="/assets/icons/arrow_left.svg" alt="Image précédente"></a>
+              <a href="#" class="arrow_right"><img src="/assets/icons/arrow_right.svg" alt="Image suivante"></a>
+              <div class="minis">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-recto.jpg" alt="">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-verso.jpg" alt="">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-recto.jpg" alt="">
+              </div>
+            </figure>
+            <div class="infos_pattern">
+              <div class="pattern_title">Back is back</div>
+              <a href="#" class="pattern_creator">Vanessa Pouzet</a>
+              <ul class="pattern_breadcrumb">
+                <li><a href="#" title="Lister les patrons pour femme">Femme</a></li>
+                <li><a href="#" title="Lister les patrons de hauts pour femme">Hauts</a></li>
+                <li><a href="#" title="Lister les patrons de tops pour femme">Tops</a></li>
+              </ul>
+              <div class="pattern_description">
+                Deux découpes au choix pour sublimer le dos&nbsp;:&nbsp;soft ou sexy chocolat. La coupe près du corps et l'encolure ras de cou vous assurent une tenue parfaite.
+              </div>
+              <div class="pattern_links">
+                <a class="pattern_source" href="https://eshop.vanessapouzet.com/fr/les-patrons/166-back-is-back-du-34-au-46-.html" title="Se rendre sur la page originale du patron (lien externe)" target="_blank">Vers la source</a>
+                <div class="favorite_comments">
+                  <a class="pattern_favorite" href="#" title="Mettre ce patron en favori">12</a>
+                  <span class="pattern_comments">0</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </a><a href="#" class="pattern_link">
+          <article class="pattern_card last_pattern" id="0">
+            <figure>
+              <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/medium/back-is-back-du-34-au-46-verso.jpg" alt="">
+              <a href="#" class="arrow_left"><img src="/assets/icons/arrow_left.svg" alt="Image précédente"></a>
+              <a href="#" class="arrow_right"><img src="/assets/icons/arrow_right.svg" alt="Image suivante"></a>
+              <div class="minis">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-recto.jpg" alt="">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-verso.jpg" alt="">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-recto.jpg" alt="">
+              </div>
+            </figure>
+            <div class="infos_pattern">
+              <div class="pattern_title">Back is back</div>
+              <a href="#" class="pattern_creator">Vanessa Pouzet</a>
+              <ul class="pattern_breadcrumb">
+                <li><a href="#" title="Lister les patrons pour femme">Femme</a></li>
+                <li><a href="#" title="Lister les patrons de hauts pour femme">Hauts</a></li>
+                <li><a href="#" title="Lister les patrons de tops pour femme">Tops</a></li>
+              </ul>
+              <div class="pattern_description">
+                Deux découpes au choix pour sublimer le dos&nbsp;:&nbsp;soft ou sexy chocolat. La coupe près du corps et l'encolure ras de cou vous assurent une tenue parfaite.
+              </div>
+              <div class="pattern_links">
+                <a class="pattern_source" href="https://eshop.vanessapouzet.com/fr/les-patrons/166-back-is-back-du-34-au-46-.html" title="Se rendre sur la page originale du patron (lien externe)" target="_blank">Vers la source</a>
+                <div class="favorite_comments">
+                  <a class="pattern_favorite" href="#" title="Mettre ce patron en favori">12</a>
+                  <span class="pattern_comments">0</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </a>
+      </div>
+    </section>
+
+    <section class="creator_spotlight">
+      <h2>Créateur sous les projecteurs</h2>
+
+      <div class="spotlight">
+        <div class="creator_infos">
+          <img class="creator_logo" src="/assets/creators/charlotte-auzou/logo.png" alt="">
+          <div class="creator_presentation">
+            <h3>Présentation de l’atelier Charlotte Auzou</h3>
+            <p>Les patrons à personnaliser sont un concept de couture innovant et ludique.</p>
+            <p>À l'origine une marque de robes de mariées et demoiselles d'honneur cousues en semi-mesure, les robes personnalisées sont devenues en 2019 des patrons de couture à destination de celles qui cousent leurs propres vêtements.</p>
+          </div>
+        </div>
+        <div class="creator_favorites">
+          <div class="creator_fav_patterns">
+            <a href="#" class="creator_fav_pattern_link">
+              <article class="creator_fav_pattern">
+                <img src="/assets/creators/deer-and-doe/bruyere/small/patron-chemise-bruyere.jpg" alt="Image du patron de la chemise Bruyère de Deer and Doe">
+                <p>Bruyère</p>
+              </article>
+            </a>
+            <a href="#" class="creator_fav_pattern_link">
+              <article class="creator_fav_pattern">
+                <img src="/assets/creators/deer-and-doe/bruyere/small/patron-chemise-bruyere2.jpg" alt="Image du patron de la chemise Bruyère 2 de Deer and Doe">
+                <p>Bruyère 2</p>
+              </article>
+            </a>
+            <a href="#" class="creator_fav_pattern_link">
+              <article class="creator_fav_pattern">
+                <img src="/assets/creators/vanessa-pouzet/0-vanessa-pouzet-back-is-back/small/back-is-back-du-34-au-46-recto.jpg" alt="">
+                <p>Back is back</p>
+              </article>
+            </a>
+          </div>
+          <div class="creator_fav_creators">
+            <a href="#" class="creator_fav_creator_link">
+              <article class="creator_fav_creator">
+                <img class="creator_logo" src="/assets/creators/deer-and-doe/logo.png" alt="Consulter les patrons du créateur Deer and Doe">
+                <p>Deer and Doe</p>
+              </article>
+            </a>
+            <a href="#" class="creator_fav_creator_link">
+              <article class="creator_fav_creator">
+                <img class="creator_logo" src="/assets/creators/vanessa-pouzet/logo.png" alt="Consulter les patrons du créateur Vanessa Pouzet">
+                <p>Vanessa Pouzet</p>
+              </article>
+            </a>
+            <a href="#" class="creator_fav_creator_link">
+              <article class="creator_fav_creator">
+                <img class="creator_logo" src="/assets/creators/ivanne-s/logo.png" alt="Consulter les patrons du créateur Ivanne S">
+                <p>Ivanne S</p>
+              </article>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
