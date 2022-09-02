@@ -133,15 +133,11 @@
                 <div class="pattern_title">{{pattern.pat_name}}</div>
                 <a href="#" class="pattern_creator">{{pattern.pat_creator}}</a>
                 <div class="pattern_description">
-                  {{pattern.pat_description}}
+                  {{pattern.pat_description | truncate : 130 : { trailingString: " …", countTrailing: true } }}
                 </div>
                 <div class="title">Etiquettes</div>
                 <ul class="tags" *ngFor="let tag of pattern.pat_tags">
-                  <li class="tag"><a href="/patterns/tag/{{tag}}">Chic</a></li>
-                  <!-- <li class="tag"><a href="#">Chic</a></li>
-                  <li class="tag"><a href="#">Dos nu</a></li>
-                  <li class="tag"><a href="#">Steampunk</a></li>
-                  <li class="tag"><a href="#">Historique</a></li> -->
+                  <!-- <li class="tag"><a href="/patterns/tag/{{tag.tag_short_url}}">{{tag.tag_label}}</a></li> --><!-- TODO tag array dans les patrons -->
                 </ul>
               </div>
             </a>

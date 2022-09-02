@@ -4,6 +4,7 @@ import { PatternService } from './pattern/pattern.service';
 import { TagService } from '../tags/tag.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Tag } from '../tags/tag.model';
+import { TruncateModule } from '@yellowspot/ng-truncate';
 
 @Component({
   selector: 'app-patterns',
@@ -21,23 +22,14 @@ export class PatternsComponent implements OnInit {
 
   ngOnInit(): void {
     // const tag = +this.route.snapshot.params['label']; // le + avant pour transormer en string
-    const tag:string = this.route.snapshot.params['label'];
+    const tagInUrl:string = this.route.snapshot.params['label'];
+
     this.patterns = this.PatternService.getPatterns();
-    const chosenTag = this.tagService.getTagByShortUrl(tag);
 
-    // this.patterns.forEach(
-    //   pattern => pattern.pat_tags.forEach(
+    if(tagInUrl !== undefined) {
+      const chosenTag = this.tagService.getTagByShortUrl(tagInUrl);
+    }
 
-    //   )
-    // );
-    // console.log(this.patterns);
-
-    // const selectedTag = 6;
-    // this.filteredPatterns = this.patterns.filter((p: Pattern) => {
-    //   p.pat_tags.includes(selectedTag);
-    // });
-
-    // console.log(this.filteredPatterns);
   }
 
 }

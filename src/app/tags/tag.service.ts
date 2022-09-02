@@ -24,6 +24,9 @@ export class TagService {
     ),
     new Tag(
       6, 'Encolure carrée', 'encolure-carree'
+    ),
+    new Tag(
+      7, 'Manches carrées', 'manches-carrees'
     )
   ];
 
@@ -50,24 +53,15 @@ export class TagService {
   }
 
   getTagByLabel(tag_label: number) {
-    // console.log('patron : ', this.patterns[pat_id]);
     return this.tags[tag_label];
   }
 
   getTagByShortUrl(tag_short_url: string) {
     console.log('tags', this.tags);
+
     const filteredTag:Tag[] = this.tags.filter(element => {
-      element.tag_label.includes('Historique');
+      return element.tag_short_url.includes('tag_short_url');
     });
-    console.log('test : ', filteredTag);
     return filteredTag;
-
-    // const selectedTag = 6;
-    // this.filteredPatterns = this.patterns.filter((p: Pattern) => {
-    //   p.pat_tags.includes(selectedTag);
-    // });
-
-
-    // return this.tags[tag_label];
   }
 }
